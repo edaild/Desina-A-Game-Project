@@ -6,18 +6,19 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 5;
-    public float gravity = -9.18f;
-    public float jumpHeight = 3f;
+    public float speed = 5; // 속도
+    public float gravity = -9.18f;  // 중력
+    public float jumpHeight = 3f;   // 점프 높이
 
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
+    public Transform groundCheck;       //지상 확인
+    public float groundDistance = 0.4f; //지상거리
+    public LayerMask groundMask;        //그라운드마스크
 
-    Vector3 velocity;
+        Vector3 velocity;
     bool isGrounded;
     void Update()
     {
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -45,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
+
+        transform.LookAt(transform.position + move);
 
         velocity.y += gravity * Time.deltaTime;
 

@@ -278,6 +278,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100096, guid: a18fa85e82c414a4dbd41fb5998cc808, type: 3}
       insertIndex: -1
       addedObject: {fileID: 65580054}
+    - targetCorrespondingSourceObject: {fileID: 100096, guid: a18fa85e82c414a4dbd41fb5998cc808, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 65580064}
   m_SourcePrefab: {fileID: 100100000, guid: a18fa85e82c414a4dbd41fb5998cc808, type: 3}
 --- !u!1 &65580052 stripped
 GameObject:
@@ -315,6 +318,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400096, guid: a18fa85e82c414a4dbd41fb5998cc808, type: 3}
   m_PrefabInstance: {fileID: 65580051}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &65580064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65580052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5721f45a4372242a249d3bb70958a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  speed: 5
+  gravity: -9.18
+  jumpHeight: 3
+  groundCheck: {fileID: 0}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &139766767
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +350,8 @@ GameObject:
   - component: {fileID: 139766769}
   - component: {fileID: 139766768}
   - component: {fileID: 139766770}
+  - component: {fileID: 139766771}
+  - component: {fileID: 139766772}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -396,6 +422,40 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &139766771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139766767}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32244c3e51a914f49b0a49af291f0282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+--- !u!65 &139766772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139766767}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &201706614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,7 +1799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 65580059}
-  offset: {x: -2, y: 2, z: 0.2}
+  offset: {x: -6, y: 5, z: 0.2}
 --- !u!1001 &1590409431
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -44,7 +44,7 @@ public class playerscipt : MonoBehaviour
 
     void Move()
     {
-        moveVec = new Vector3(hAxis, 0, vAxis).normalized;
+        moveVec = new Vector3(vAxis, 0, hAxis).normalized;
 
         transform.position += moveVec * speed * (WDown ? 0.3f : 1f) * Time.deltaTime;
 
