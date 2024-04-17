@@ -1,3 +1,3 @@
-# 3DRPG-Project
+# 3D RPG-Project
 
-3DRPG-Project
+3D RPG-Project
